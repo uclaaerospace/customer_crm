@@ -2,7 +2,8 @@ class CustomersController < ApplicationController
   def index
   end
 
-  def new
+  def
+     @customer = Customer.new
   end
 
   def create
