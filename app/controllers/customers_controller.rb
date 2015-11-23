@@ -2,7 +2,6 @@ class CustomersController < ApplicationController
 
 def show
     @customer = Customer.find(params[:id])
-    @company = Company.find(params[:id])
   end
 
   def index
@@ -11,7 +10,6 @@ def show
 
   def new
      @customer = Customer.new
-     @company = Company.new
   end
 
   def create
