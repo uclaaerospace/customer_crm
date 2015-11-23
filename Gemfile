@@ -33,6 +33,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+
+  gem 'faker'              # 本物っぽいテストデータの作成
+  gem 'faker-japanese'     # 本物っぽいテストデータの作成（日本語対応）
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
