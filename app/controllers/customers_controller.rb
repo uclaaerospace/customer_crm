@@ -1,18 +1,27 @@
 class CustomersController < ApplicationController
-  def index
+
+def show
+    @customer = Customer.find(params[:id])
   end
 
-  def
+  def index
+    @customers = Customer.all
+  end
+
+  def new
      @customer = Customer.new
   end
 
   def create
     @customer = Customer.new(customer_params)
-    @customer.save
+    if @customer.save
     redirect_to @customer
+  else
+    render :new
   end
+end
 
-    private
+private
 
   def customer_params
     params.require(:customer).permit(
@@ -21,18 +30,27 @@ class CustomersController < ApplicationController
       :email
       )
   end
-end
 
   def edit
-  end
-
-  def update
-  end
-
-  def show
     @customer = Customer.find(params[:id])
   end
 
+  def update
+    @customer = Customer.find(params[:id])
+    if  @customer.update(customer_params)
+      redirect_to @customer
+    else
+      render :edit
+    end
+
+  end
+
+
+
   def destroy
+    @customer = Customer.find(params[:id])
+    @customer.destroy
+    redirect_to customers_url
+
   end
 end
