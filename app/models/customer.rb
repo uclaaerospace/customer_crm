@@ -1,5 +1,7 @@
 class Customer < ActiveRecord::Base
 
+  belongs_to :company
+
   def full_name
     full_name = family_name + given_name
     full_name
