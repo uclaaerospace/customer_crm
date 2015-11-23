@@ -30,6 +30,7 @@ end
   end
 
   def show
+    @customer = Customer.find(params[:id])
   end
 
   def destroy
