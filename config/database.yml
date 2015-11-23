@@ -22,4 +22,10 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+adapter: mysql2
+encoding: utf8
+database: management
+port: 3306
+username: yatsu
+password: pass
+host: localhost
